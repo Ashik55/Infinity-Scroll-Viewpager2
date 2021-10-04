@@ -56,40 +56,14 @@ public class MainActivity extends AppCompatActivity {
 
         viewPager2.setPageTransformer(compositePageTransformer);
 
-        viewPager2.registerOnPageChangeCallback(new ViewPager2.OnPageChangeCallback() {
-            @Override
-            public void onPageSelected(int position) {
-                super.onPageSelected(position);
-                sliderHandler.removeCallbacks(sliderRunnable);
-                sliderHandler.postDelayed(sliderRunnable, 2000); // slide duration 2 seconds
-            }
-        });
 
 
-       // viewPager2.setCurrentItem(1);
+        viewPager2.setCurrentItem(1);
+        viewPager2.setVisibility(View.VISIBLE);
 
 
 
     }
 
-    private Runnable sliderRunnable = new Runnable() {
-        @Override
-        public void run() {
-            viewPager2.setCurrentItem(viewPager2.getCurrentItem() + 1);
-        }
-    };
-
-
-    @Override
-    protected void onPause() {
-        super.onPause();
-        sliderHandler.removeCallbacks(sliderRunnable);
-    }
-
-    @Override
-    protected void onResume() {
-        super.onResume();
-        sliderHandler.postDelayed(sliderRunnable, 2000);
-    }
 
 }

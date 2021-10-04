@@ -4,12 +4,16 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:animateLayoutChanges="true"
     tools:context=".MainActivity">
 
   <androidx.viewpager2.widget.ViewPager2
       android:id="@+id/viewPagerImageSlider"
       android:layout_width="match_parent"
       android:layout_height="match_parent"
+      android:visibility="visible"
+      android:layout_marginTop="80dp"
+      android:layout_marginBottom="80dp"
       android:paddingStart="80dp"
       android:paddingEnd="80dp"/>
 
